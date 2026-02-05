@@ -8,7 +8,7 @@ app = Flask(__name__)
 CORS(app)
 
 # 使用同一个 Key
-ZHIPU_API_KEY = os.environ.get("ZHIPU_API_KEY", "") # 请在部署时设置环境变量 ZHIPU_API_KEY
+ZHIPU_API_KEY = os.environ.get("ZHIPU_API_KEY", "49febb5ce1bf4563bc9c15bd710d1c11.3sSNr8Z2tGqMCIlt")
 # 更改为 Coding 端点 (GLM-4-Plus 或 GLM-4-Coding 可能可用，但 Code 1113 通常是账号级别的余额问题)
 # 这里尝试切换模型为免费的 glm-4-flash 以验证是否因为模型收费导致
 BASE_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"

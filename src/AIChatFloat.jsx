@@ -31,7 +31,8 @@ const AIChatFloat = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://154.64.236.7:5000/api/chat', {
+      // 生产环境 Vercel 自动处理 /api 代理，本地开发走 Proxy
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
