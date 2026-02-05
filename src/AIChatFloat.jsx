@@ -31,7 +31,12 @@ const AIChatFloat = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://154.64.236.7:5000/api/chat', {
+      // Vercel 部署后，前后端同源，直接使用相对路径 /api/chat
+      // 本地开发时如果用了 npm run dev 且配置了代理，也是 /api/chat
+      // 或者判断环境：import.meta.env.PROD
+      const apiUrl = '/api/chat'; 
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
